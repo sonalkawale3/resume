@@ -3,216 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonal Ashok Kawale - DevOps Engineer</title>
+    <title>Sonal Ashok Kawale | DevOps & Cloud Engineer</title>
     <style>
         :root {
-            --primary-color: #0078D4; /* Azure Blue */
-            --text-color: #333;
-            --bg-color: #f8f9fa;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --primary: #3b82f6;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --accent-bg: #f8fafc;
+            --badge-bg: #e0f2fe;
+            --badge-text: #0369a1;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        .container {
-            max-width: 900px;
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .portfolio-container {
+            max-width: 1000px;
             margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 8px 15px -6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
         }
+
         header {
+            background: var(--bg-gradient);
+            color: #ffffff;
+            padding: 50px 40px;
             text-align: center;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
         }
-        h1 {
-            color: #2c3e50;
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .subtitle {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+
+        header .subtitle {
+            font-size: 1.3rem;
+            color: #38bdf8;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
-        .tech-stack {
-            font-size: 0.9em;
-            color: #555;
-            margin-bottom: 15px;
+
+        header .tags {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
-        .contact-info {
+
+        .contact-grid {
             display: flex;
             justify-content: center;
             gap: 20px;
-            font-size: 0.95em;
+            flex-wrap: wrap;
         }
-        .contact-info a {
-            color: var(--text-color);
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-item a {
+            color: #ffffff;
             text-decoration: none;
         }
+
+        .content-section {
+            padding: 40px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .content-section:last-child {
+            border-bottom: none;
+        }
+
         h2 {
-            color: var(--primary-color);
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            text-transform: uppercase;
-            font-size: 1.3em;
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
-        h3 {
-            color: #34495e;
-            margin-bottom: 5px;
-            font-size: 1.1em;
+
+        h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 2px;
+            background: #e2e8f0;
+            margin-left: 15px;
         }
-        .date {
-            float: right;
-            color: #7f8c8d;
-            font-size: 0.9em;
-            font-style: italic;
+
+        .summary-text {
+            color: #475569;
+            font-size: 1.05rem;
+            text-align: justify;
         }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--accent-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .skill-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .skill-category {
-            font-weight: bold;
-            color: #2c3e50;
+
+        .company-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
         }
-        ul {
-            margin-top: 5px;
-            padding-left: 20px;
+
+        .job-date {
+            background: #e2e8f0;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 600;
         }
-        li {
+
+        .job-category {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-top: 15px;
             margin-bottom: 8px;
+            text-transform: cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .sub-heading {
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary);
             font-weight: bold;
-            margin-top: 10px;
-            color: #444;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .edu-card {
+            background: var(--accent-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            header { padding: 35px 20px; }
+            header h1 { font-size: 2rem; }
+            .content-section { padding: 25px; }
+            .timeline-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="portfolio-container">
     <header>
-        <h1>Sonal Ashok Kawale [cite: 1]</h1>
-        <div class="subtitle">DevOps Engineer [cite: 2]</div>
-        <div class="tech-stack">Azure | ADO | Terraform | CICD | Docker | AKS | HELM [cite: 3]</div>
-        <div class="contact-info">
-            <span>📞 <a href="tel:+919619452815">+919619452815</a> [cite: 4]</span>
-            <span>✉ <a href="mailto:sonalkawale3@gmail.com">sonalkawale3@gmail.com</a> [cite: 4]</span>
-            <span>📍 Mumbai, Maharashtra</span>
+        <h1>Sonal Ashok Kawale</h1>
+        <div class="subtitle">DevOps Engineer</div>
+        <div class="tags">Azure | ADO | Terraform | CICD | Docker | AKS | HELM</div>
+        <div class="contact-grid">
+            <div class="contact-item">📞 <a href="tel:+919619452815">+919619452815</a></div>
+            <div class="contact-item">✉ <a href="mailto:sonalkawale3@gmail.com">sonalkawale3@gmail.com</a></div>
+            <div class="contact-item">📍 Mumbai, Maharashtra</div>
         </div>
     </header>
 
-    <section>
-        <h2>Profile Summary [cite: 5]</h2>
-        <p>DevOps and Cloud Engineer with 11 years of IT experience, including 5+ years in Azure Cloud infrastructure and Azure DevOps platform engineering. [cite: 6] Strong expertise in Infrastructure as Code using Terraform and provisioning scalable, secure Azure environments, with hands-on experience in Azure Kubernetes Service (AKS) and CI/CD pipeline automation. [cite: 7] Proven track record in reducing deployment time by 40% and security misconfigurations by 50% through DevSecOps and infrastructure automation. [cite: 8] Committed to delivering highly available, resilient infrastructure with 99.95%+ uptime. [cite: 9]</p>
+    <section class="content-section">
+        <h2>Profile Summary</h2>
+        <p class="summary-text">
+            DevOps and Cloud Engineer with 11 years of IT experience, including 5+ years in Azure Cloud infrastructure and Azure DevOps platform engineering. Strong expertise in Infrastructure as Code using Terraform and provisioning scalable, secure Azure environments, with hands-on experience in Azure Kubernetes Service (AKS) and CI/CD pipeline automation. Proven track record in reducing deployment time by 40% and security misconfigurations by 50% through DevSecOps and infrastructure automation. Committed to delivering highly available, resilient infrastructure with 99.95%+ uptime.
+        </p>
     </section>
 
-    <section>
-        <h2>Skills [cite: 10]</h2>
+    <section class="content-section">
+        <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill-category">Cloud Platform:</div>
-            <div>Microsoft Azure [cite: 11]</div>
-            
-            <div class="skill-category">Infrastructure as Code:</div>
-            <div>Terraform [cite: 12]</div>
-            
-            <div class="skill-category">CI/CD Tools:</div>
-            <div>Azure DevOps, GitHub Actions [cite: 13]</div>
-            
-            <div class="skill-category">Containers & Orchestration:</div>
-            <div>Docker, Kubernetes (AKS), Helm, Argo CD [cite: 14]</div>
-            
-            <div class="skill-category">DevSecOps Tools:</div>
-            <div>SonarQube, TFSec, TFLint, Checkov, Trivy, Terrascan [cite: 15]</div>
-            
-            <div class="skill-category">Version Control:</div>
-            <div>GitHub, Azure Repos [cite: 16]</div>
+            <div class="skill-card">
+                <div class="skill-title">Cloud Platform</div>
+                <div class="skill-badges"><span class="badge">Microsoft Azure</span></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Infrastructure as Code</div>
+                <div class="skill-badges"><span class="badge">Terraform</span></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">CI/CD Tools</div>
+                <div class="skill-badges">
+                    <span class="badge">Azure DevOps</span>
+                    <span class="badge">GitHub Actions</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Containers & Orchestration</div>
+                <div class="skill-badges">
+                    <span class="badge">Docker</span>
+                    <span class="badge">Kubernetes (AKS)</span>
+                    <span class="badge">Helm</span>
+                    <span class="badge">Argo CD</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">DevSecOps Tools</div>
+                <div class="skill-badges">
+                    <span class="badge">SonarQube</span>
+                    <span class="badge">TFSec</span>
+                    <span class="badge">TFLint</span>
+                    <span class="badge">Checkov</span>
+                    <span class="badge">Trivy</span>
+                    <span class="badge">Terrascan</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-title">Version Control</div>
+                <div class="skill-badges">
+                    <span class="badge">GitHub</span>
+                    <span class="badge">Azure Repos</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Work Experience [cite: 17]</h2>
-
-        <div class="job">
-            <h3>Bharti Airtel Services Limited <span class="date">DEC-2023 – DEC-2025</span> [cite: 18]</h3>
+    <section class="content-section">
+        <h2>Work Experience</h2>
+        <div class="timeline">
             
-            <div class="sub-heading">Infrastructure as Code (IaC) & Automation [cite: 19]</div>
-            <ul>
-                <li>Built Azure Landing Zones using reusable Terraform modules to ensure security, scalability, and consistency. [cite: 20]</li>
-                <li>Managed Terraform remote state and backends for safe, version-controlled infrastructure changes. [cite: 21]</li>
-                <li>Standardized YAML-based CI/CD pipelines in Azure DevOps and handled release automation. [cite: 22]</li>
-                <li>Designed and implemented secure Azure Hub-Spoke network architecture with Application Gateway, Private Endpoints, and NSGs. [cite: 23]</li>
-            </ul>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-name">Bharti Airtel Services Limited</div>
+                    <div class="job-date">DEC-2023 – DEC-2025</div>
+                </div>
+                
+                <div class="job-category">Infrastructure as Code (IaC) & Automation</div>
+                <ul>
+                    <li>Built Azure Landing Zones using reusable Terraform modules to ensure security, scalability, and consistency.</li>
+                    <li>Managed Terraform remote state and backends for safe, version-controlled infrastructure changes.</li>
+                    <li>Standardized YAML-based CI/CD pipelines in Azure DevOps and handled release automation.</li>
+                    <li>Designed and implemented secure Azure Hub-Spoke network architecture with Application Gateway, Private Endpoints, and NSGs.</li>
+                </ul>
 
-            <div class="sub-heading">CI/CD & DevSecOps [cite: 24]</div>
-            <ul>
-                <li>Built and optimized CI/CD pipelines in Azure DevOps, reducing deployment time by 40% and improving release reliability. [cite: 25]</li>
-                <li>Integrated DevSecOps tools such as SonarQube, TFSec, TFLint, Trivy, and Checkov to detect security issues early. [cite: 26]</li>
-            </ul>
+                <div class="job-category">CI/CD & DevSecOps</div>
+                <ul>
+                    <li>Built and optimized CI/CD pipelines in Azure DevOps, reducing deployment time by 40% and improving release reliability.</li>
+                    <li>Integrated DevSecOps tools such as SonarQube, TFSec, TFLint, Trivy, and Checkov to detect security issues early.</li>
+                </ul>
 
-            <div class="sub-heading">Containerization & GitOps [cite: 27]</div>
-            <ul>
-                <li>Built Docker images and deployed containerized workloads on Azure Kubernetes Service(AKS) clusters. [cite: 28, 29]</li>
-                <li>Used Helm charts and Argo CD (GitOps) for containerized application deployments. [cite: 30]</li>
-            </ul>
+                <div class="job-category">Containerization & GitOps</div>
+                <ul>
+                    <li>Built Docker images and deployed containerized workloads on Azure Kubernetes Service (AKS) clusters.</li>
+                    <li>Used Helm charts and Argo CD (GitOps) for containerized application deployments.</li>
+                </ul>
 
-            <div class="sub-heading">Version Control & Collaboration [cite: 31]</div>
-            <ul>
-                <li>Managed Git repositories and branching strategies using Azure Repos, ensuring structured code versioning and release workflows. [cite: 32]</li>
-                <li>Observability & Reliability - Integrated Monitoring tools like Prometheus, Grafana. [cite: 33]</li>
-            </ul>
-        </div>
+                <div class="job-category">Version Control & Collaboration</div>
+                <ul>
+                    <li>Managed Git repositories and branching strategies using Azure Repos, ensuring structured code versioning and release workflows.</li>
+                    <li>Observability & Reliability - Integrated Monitoring tools like Prometheus, Grafana.</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <h3>Ericsson India Pvt Ltd / Essjay Ericsson Pvt Ltd <span class="date">DEC-2016 - NOV-2023</span> [cite: 34]</h3>
-            
-            <div class="sub-heading">Infrastructure Automation (Terraform / IaC) [cite: 35]</div>
-            <ul>
-                <li>Automated Azure infrastructure (VNets, Subnets, NSGs, VMs) using Terraform. [cite: 36]</li>
-                <li>Developed reusable Terraform modules and deployed infrastructure through Azure DevOps pipelines. [cite: 37]</li>
-                <li>Standardized infrastructure deployments across Dev, QA, and Production environments using modular Terraform templates. [cite: 38]</li>
-                <li>Designed modular and reusable Terraform architecture supporting multiple environments and teams. [cite: 39]</li>
-            </ul>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-name">Ericsson India Pvt Ltd / Essjay Ericsson Pvt Ltd</div>
+                    <div class="job-date">DEC-2016 - NOV-2023</div>
+                </div>
+                
+                <div class="job-category">Infrastructure Automation (Terraform / IaC)</div>
+                <ul>
+                    <li>Automated Azure infrastructure (VNets, Subnets, NSGs, VMs) using Terraform.</li>
+                    <li>Developed reusable Terraform modules and deployed infrastructure through Azure DevOps pipelines.</li>
+                    <li>Standardized infrastructure deployments across Dev, QA, and Production environments using modular Terraform templates.</li>
+                    <li>Designed modular and reusable Terraform architecture supporting multiple environments and teams.</li>
+                </ul>
 
-            <div class="sub-heading">CI/CD Implementation [cite: 40]</div>
-            <ul>
-                <li>Implemented CI/CD workflows for infrastructure deployments using Azure DevOps YAML pipelines. [cite: 41]</li>
-                <li>Implemented infrastructure validation and security scanning using tools like TFLint and Checkov. Cloud Infrastructure & Networking [cite: 42]</li>
-                <li>Designed and provisioned Azure Virtual Networks (VNets) with public and private subnets to support high availability. [cite: 43]</li>
-                <li>Configured Azure networking components including subnets, NSGs, and routing for secure workloads. [cite: 44]</li>
-            </ul>
-        </div>
+                <div class="job-category">CI/CD Implementation & Networking</div>
+                <ul>
+                    <li>Implemented CI/CD workflows for infrastructure deployments using Azure DevOps YAML pipelines.</li>
+                    <li>Implemented infrastructure validation and security scanning using tools like TFLint and Checkov.</li>
+                    <li>Designed and provisioned Azure Virtual Networks (VNets) with public and private subnets to support high availability.</li>
+                    <li>Configured Azure networking components including subnets, NSGs, and routing for secure workloads.</li>
+                </ul>
+            </div>
 
-        <div class="job">
-            <h3>Vedang Cellular Services Private Limited <span class="date">DEC-2014 - DEC-2016</span> [cite: 45]</h3>
-            <div class="sub-heading">Network Operations & Maintenance [cite: 46]</div>
-            <ul>
-                <li>Managed end-to-end operations for 2,500+ network components (BTS, microwave links, edge routers), maintaining 99.95% network availability. [cite: 47, 48]</li>
-                <li>Executed BTS commissioning and post-deployment tests to ensure signal quality and performance benchmarks. [cite: 49]</li>
-            </ul>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="company-name">Vedang Cellular Services Private Limited</div>
+                    <div class="job-date">DEC-2014 - DEC-2016</div>
+                </div>
+                <div class="job-category">Network Operations & Maintenance</div>
+                <ul>
+                    <li>Managed end-to-end operations for 2,500+ network components (BTS, microwave links, edge routers), maintaining 99.95% network availability.</li>
+                    <li>Executed BTS commissioning and post-deployment tests to ensure signal quality and performance benchmarks.</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
-    <section>
-        <h2>Education [cite: 50]</h2>
-        <ul>
-            <li><strong>Bachelor Of Engineering</strong> – Bharati Vidyapeeth’s College of Engineering Kolhapur, (2013) [cite: 51]</li>
-        </ul>
+    <section class="content-section">
+        <h2>Education</h2>
+        <div class="edu-card">
+            <strong>Bachelor Of Engineering</strong> – Bharati Vidyapeeth’s College of Engineering Kolhapur (2013)
+        </div>
     </section>
 </div>
 
